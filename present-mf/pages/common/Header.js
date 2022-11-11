@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { Menu } from "react-feather"
-import { ObSlider } from '../ObUik';
+import { ObSlider } from '../../ObUik';
 import router from 'next/router';
 
 export const linkItems = [
