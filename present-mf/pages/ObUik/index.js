@@ -1,0 +1,1 @@
+export {default as ObSlider} from "./ObSlider"
