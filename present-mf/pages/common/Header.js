@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React, { useState } from 'react';
 import { Menu } from "react-feather"
 import { ObSlider } from '../../ObUik';
@@ -30,7 +29,7 @@ export const linkItems = [
 function Header(props) {
 
     const [showLink, setShowLink] = useState(false)
-    const getUiLink = (url, name) => <Link href={url}><li className={`py-3 cursor-pointer text-white w-full pl-12 hover:bg-white hover:text-gray-500 ${router.pathname === url ? "text-gray-300" : ""}`}>{name}</li></Link>
+    const getUiLink = (url, name, index) => <li onClick={() => router.push(url)} key={index} className={`py-3 cursor-pointer text-white w-full pl-12 hover:bg-white hover:text-gray-500 ${router.pathname === url ? "text-gray-300" : ""}`}>{name}</li>
     return (
         <div className='p-10 py-6 border-b border-gray-200 sticky top-0 bg-white z-100'>
             <Menu onClick={() => setShowLink(true)} className="h-10 w-10 text-gray-500 cursor-pointer" />
@@ -39,7 +38,7 @@ function Header(props) {
                     <ObSlider.Body className=" bg-gray-400 pt-10">
                         <ul className='flex flex-col items-center justify-center'>
                             {
-                                linkItems.map(item => getUiLink(item.url, item.name))
+                                linkItems.map((item, index) => getUiLink(item.url, item.name, index))
                             }
                         </ul>
                     </ObSlider.Body>
