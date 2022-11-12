@@ -1,11 +1,44 @@
+import { useRouter } from "next/router";
 import UISection from "./components/UISection";
 
 export default function Home() {
+  const router = useRouter();
   return (
-    <div className='flex flex-col gap-8'>
-      <UISection heading="What is Micro frontend?" content="Micro frontend is a pattern where UI utilities were build as an appilication, seperated from the main application and deployed seperately, which other applications can utilise in order to create an efficient client application." />
-      <UISection heading="Micro frontend and its architecture" content={<img src={"/micro-frontend-architecture.png"} alt="Microfront end architectural diagram" />} />
-      <UISection heading="Webpack 5 and Module federation plugin" content="Webpack 5 provides a plugin called module federation plugin which gives developers a way to create multiple separate builds that form a single application. Any JavaScript application that is bundled with Webpack 5.0 or greater can dynamically load or share code and dependencies with any other at runtime." />
+    <div className="flex flex-col lg:flex-row items-center justify-center lg:mt-[15vh] lg:gap-10 gap-20">
+      <img
+        width="450"
+        src="	https://react-intro-tb.netlify.app/static/media/web.b0ad84dd813c7b932937.gif"
+      />
+      <div className="text-center">
+        <div className="text-5xl font-bold text-black mb-3">
+          Reusable components!
+        </div>
+        <span style={{ lineHeight: "1px" }}>
+          We're going to talk about what micro frontend is, how we can adopt
+          reusable components and how we can acheive this in our applications.{" "}
+        </span>
+        <button
+          className="cssbuttons-io-button mx-auto mt-4"
+          onClick={() => router.push("/components/Introduction")}
+        >
+          {" "}
+          Get started
+          <div className="icon">
+            <svg
+              height="24"
+              width="24"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+        </button>
+      </div>
     </div>
-  )
+  );
 }
