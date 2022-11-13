@@ -87,3 +87,12 @@ a {
 .cssbuttons-io-button:active .icon {
   transform: scale(0.95);
 }
+
+ul li::before {
+  content: "\2022";
+  color: rgb(245, 116, 4);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
