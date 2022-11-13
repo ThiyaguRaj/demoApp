@@ -13,9 +13,11 @@ export default function Home() {
         <div className="text-5xl font-bold text-black mb-3">
           Reusable components!
         </div>
-        <span style={{ lineHeight: "1px" }}>
-          We`re going to talk about what micro frontend is, how we can adopt
-          reusable components and how we can acheive this in our applications.
+        <span className="text-gray-500" style={{ lineHeight: "1px" }}>
+          We`re going to talk about what{" "}
+          <span className="mx-1 font-bold">micro frontend is</span>, how we can
+          adopt <span className="mx-1 font-bold">reusable components</span> and
+          how we can acheive this in our applications.
         </span>
         <button
           className="cssbuttons-io-button mx-auto mt-4"

@@ -2,6 +2,7 @@ import React from "react";
 import { ArrowRight, ArrowLeft } from "react-feather";
 import { linkItems } from "./Header";
 import { useRouter } from "next/router";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 function Footer(props) {
   const router = useRouter();
@@ -21,17 +22,17 @@ function Footer(props) {
   };
   return (
     <div className="flex items-center gap-5 justify-center text-center p-10 py-1 text-gray-400 sticky bottom-0 bg-white text-xs font-semibold">
-      <ArrowLeft
+      <ChevronLeftIcon
         onClick={() =>
           router.pathname !== linkItems[0]?.url && router.push(getRoute(false))
         }
         className={`${
           router.pathname === linkItems[0]?.url
             ? "cursor-not-allowed bg-gray-400"
-            : "bg-gray-600"
-        } h-9 w-9 text-white hover:bg-gray-400 border rounded-full p-1 cursor-pointer`}
+            : "bg-gray-600 cursor-pointer"
+        } h-10 text-white hover:bg-gray-400 border rounded-full p-2`}
       />
-      <ArrowRight
+      <ChevronRightIcon
         onClick={() =>
           router.pathname !== linkItems[linkItems?.length - 1]?.url &&
           router.push(getRoute(true))
@@ -39,8 +40,8 @@ function Footer(props) {
         className={`${
           router.pathname === linkItems[linkItems?.length - 1]?.url
             ? "cursor-not-allowed bg-gray-400"
-            : "bg-gray-600"
-        } h-9 w-9 text-white bg-gray-600 hover:bg-gray-400 border rounded-full p-1 cursor-pointer`}
+            : "bg-gray-600 cursor-pointer"
+        } h-10 text-white hover:bg-gray-400 border rounded-full p-2`}
       />
     </div>
   );
